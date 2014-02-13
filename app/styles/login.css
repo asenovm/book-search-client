@@ -1,0 +1,16 @@
+#loginContainer {
+    width: 100%;
+}
+
+#loginContainer div{
+    padding: 30px;
+    position: relative;
+    left: 50%;
+    margin-left: -100px;
+}
+
+#loginContainer small {
+    position: relative;
+    top: 30px;
+    text-align: center;
+}
