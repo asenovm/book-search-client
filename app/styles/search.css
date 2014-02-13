@@ -12,7 +12,8 @@ body {
     left: 0px;
     top: 0px;
     background-color: #1fa67a;
-    border-top: 1px solid #e5e5e5;
+    background-image: url('../images/background_pattern.png');
+    border-bottom: 1px solid #228F14;
 }
 
 #container {
@@ -49,7 +50,8 @@ body {
     position: absolute;
     top: 80%;
     background-color: #1fa67a;
-    border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #228F14;
+    background-image: url('../images/background_pattern.png');
 }
 
 @media (min-width: 768px) {
