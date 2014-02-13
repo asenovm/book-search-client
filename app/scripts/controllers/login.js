@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bookSearchClientApp')
-    .controller('LoginController', function ($scope) {
+    .controller('LoginController', ['$scope', '$location', function ($scope, $location) {
         FB.init({
             appId      : '352011688261066',
             status     : true,
@@ -10,13 +10,20 @@ angular.module('bookSearchClientApp')
         });
 
         $scope.login = function () {
+            FB.getLoginStatus(function (response) {
+                if(response.status === 'connected') {
+                    $location.path('/search');
+                } else {
+                    FB.login();
+                }
+            });
+
             FB.Event.subscribe('auth.authResponseChange', function(response) {
                 if (response.status === 'connected') {
-                } else if (response.status === 'not_authorized') {
-                  FB.login();
+                    $location.path('/search');
                 } else {
-                  FB.login();
+                    FB.login();
                 }
             });
         };
-    });
+    }]);

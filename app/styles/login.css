@@ -2,9 +2,15 @@
     width: 100%;
 }
 
-#loginContainer div{
-    padding: 30px;
+#loginContainer a.btn {
+    padding: 10px;
+    width: 250px;
     position: relative;
     left: 50%;
-    margin-left: -100px;
+    margin-left: -125px;
+    margin-top: 25px;
+}
+
+#loginContainer p {
+    margin-top: 25px;
 }
