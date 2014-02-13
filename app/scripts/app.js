@@ -6,8 +6,8 @@ angular.module('bookSearchClientApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+        templateUrl: 'views/search.html',
+        controller: 'SearchController'
       })
       .otherwise({
         redirectTo: '/'
