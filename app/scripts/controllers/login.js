@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bookSearchClientApp')
-    .controller('LoginController', ['$scope', '$location', function ($scope, $location) {
+    .controller('LoginController', ['$scope', '$location', 'SessionService', function ($scope, $location, sessionService) {
         FB.init({
             appId      : '352011688261066',
             status     : true,
@@ -12,7 +12,7 @@ angular.module('bookSearchClientApp')
         $scope.login = function () {
             FB.getLoginStatus(function (response) {
                 if(response.status === 'connected') {
-                    $location.path('/search');
+                    onLoginSuccessfull(response);
                 } else {
                     FB.login();
                 }
@@ -20,10 +20,15 @@ angular.module('bookSearchClientApp')
 
             FB.Event.subscribe('auth.authResponseChange', function(response) {
                 if (response.status === 'connected') {
-                    $location.path('/search');
+                    onLoginSuccessfull(response);
                 } else {
                     FB.login();
                 }
             });
         };
+
+        function onLoginSuccessfull (response) {
+            sessionService.storeLoginInfo(response.authResponse.userID);
+            $location.path('/search');
+        }
     }]);
