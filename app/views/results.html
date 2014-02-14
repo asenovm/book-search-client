@@ -1,4 +1,4 @@
-<div carousel class="carousel">
+<div carousel class="carousel" ng-hide="!books || books.length == 0">
   <div slide ng-repeat="book in books">
     <img ng-src="{{book.image}}" style="margin: auto;">
     <div id="resultsContainer">
@@ -6,4 +6,7 @@
         <p><span class="label label-warning">Свързаност:</span> <em>{{book.relevance}}</em></p>
     </div>
   </div>
+</div>
+<div ng-show="!books || books.length == 0">
+    <h3 class="text-danger text-center">Не са намерени резултати, които да отговарят на вашето търсене</h3>
 </div>

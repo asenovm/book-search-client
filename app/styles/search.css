@@ -2,7 +2,7 @@
 body {
   padding-top: 20px;
   padding-bottom: 20px;
-  color: #fff;
+  color: #000000;
   background-color: #f9f6f1;
 }
 
@@ -15,6 +15,7 @@ body {
     background-color: #1fa67a;
     background-image: url('../images/background_pattern.png');
     border-bottom: 1px solid #228F14;
+    color: #ffffff;
 }
 
 #container {
@@ -43,6 +44,7 @@ body {
     height: 20%;
     position: absolute;
     top: 80%;
+    color: #ffffff;
     background-color: #1fa67a;
     border-top: 1px solid #228F14;
     background-image: url('../images/background_pattern.png');
