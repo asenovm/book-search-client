@@ -3,6 +3,11 @@
     max-height: 100%;
 }
 
+.carousel p {
+    text-align: center;
+    margin-top: 10px;
+}
+
 .carousel {
     height: 60%;
     color: #000000;
