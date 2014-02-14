@@ -2,18 +2,10 @@
 
 angular.module('bookSearchClientApp').service('SearchService', ['$http', function ($http) {
 
+    var SERVER_URL = 'http://localhost:8080';
+
     this.query = function (query) {
-        $http({
-            method: 'GET',
-            url: 'http://localhost:8080/search',
-            params: {
-                'q': query
-            }
-        }).success(function (response) {
-            console.dir(response);
-        }).error(function (response) {
-            console.dir(response);
-        });
+        return $http.post(SERVER_URL + '/search', { 'q': query });
     };
 
 }]);

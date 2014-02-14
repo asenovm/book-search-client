@@ -3,6 +3,7 @@ body {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #fff;
+  background-color: #f9f6f1;
 }
 
 .header {
@@ -78,4 +79,8 @@ body {
 
 .footer p {
     margin-top: 10px;
+}
+
+.bookResult {
+    color: #000000;
 }
