@@ -35,6 +35,8 @@ angular.module('bookSearchClientApp')
                 $rootScope.loggedIn = false;
                 sessionService.storeLoginInfo(null);
                 $rootScope.$apply();
+                $location.path('/');
+                $route.reload();
             });
         };
 
