@@ -11,7 +11,7 @@ angular.module('bookSearchClientApp')
             });
         };
 
-        $scope.canMarkAsRelevant = function () {
+        $scope.canMarkAsRelevant = function (book) {
             return sessionService.getLoginInfo() && !searchService.isMarkedAsRelevant(book, sessionService.getLoginInfo());
         };
 
