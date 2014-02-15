@@ -4,5 +4,5 @@
         <input type="text" class="form-control" id="searchInputField" placeholder="Въведете израз за търсене" ng-model="query">
         <p class="help-block">Моля въведете фраза, по която да се търси в заглавията и съдържанията на книгите в <i>Читанка</i>.</p>
     </div>
-    <button type="submit" class="btn btn-info center-block" ng-click="search(query)"><i class="fa fa-search"></i> Търсене</button>
+    <button type="submit" class="btn btn-info center-block" data-loading-text='<i class="fa fa-search"></i> Търсене...' ng-click="search(query, $event)"><i class="fa fa-search"></i> Търсене</button>
 </form>
