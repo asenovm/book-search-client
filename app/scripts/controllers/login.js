@@ -9,6 +9,8 @@ angular.module('bookSearchClientApp')
             xfbml      : true
         });
 
+        var logout = false;
+
         $scope.login = function () {
             FB.getLoginStatus(function (response) {
                 if(response.status === 'connected') {
@@ -21,25 +23,23 @@ angular.module('bookSearchClientApp')
             FB.Event.subscribe('auth.authResponseChange', function(response) {
                 if (response.status === 'connected') {
                     onLoginSuccessfull(response);
-                } else {
+                } else if(!logout) {
                     FB.login();
                 }
             });
         };
 
-        $rootScope.isLoggedIn = function () {
-            return sessionService.getLoginInfo();
-        };
-
         $rootScope.logout = function () {
+            logout = true;
             FB.logout(function (response) {
+                $rootScope.loggedIn = false;
                 sessionService.storeLoginInfo(null);
-                $scope.$apply();
-                console.log('logged out');
+                $rootScope.$apply();
             });
         };
 
         function onLoginSuccessfull (response) {
+            $rootScope.loggedIn = true;
             sessionService.storeLoginInfo(response.authResponse.userID);
             $location.path('/search');
             $route.reload();

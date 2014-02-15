@@ -35,7 +35,7 @@
     </head>
     <body ng-app="bookSearchClientApp">
         <div class="header">
-            <h2 class="text-center">Търси книги в <i>"Читанка"</i> <div class="btn btn-success" ng-show="isLoggedIn()">Logout</div></h3>
+            <h2 class="text-center">Търси книги в <i>"Читанка"</i> <div class="btn btn-success" ng-show="loggedIn" ng-click="logout()">Logout</div></h3>
         </div>
         <div id="container" ng-view=""></div>
         <div class="footer">
