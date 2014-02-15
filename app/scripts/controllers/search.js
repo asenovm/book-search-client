@@ -6,7 +6,7 @@ angular.module('bookSearchClientApp')
         $scope.search = function (query) {
             searchService.query(query).success(function (response) {
                 $rootScope.books = response.books.map(function (item) {
-                    item.image = 'http://assets.chitanka.info/thumb/book-cover/00/7.max.jpg'; 
+                    item.image = 'http://assets.chitanka.info/thumb/book-cover/00/0.200.png'; 
                     return item;
                 });
                 $location.path('/results');
