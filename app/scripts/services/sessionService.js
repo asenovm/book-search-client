@@ -6,4 +6,8 @@ angular.module('bookSearchClientApp').service('SessionService', [function () {
         this.userId = userId;
     };
 
+    this.getLoginInfo = function () {
+        return this.userId;
+    };
+
 }]);

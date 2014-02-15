@@ -8,4 +8,8 @@ angular.module('bookSearchClientApp').service('SearchService', ['$http', functio
         return $http.post(SERVER_URL + '/search', { 'q': query });
     };
 
+    this.markAsRelevant = function (book, userId) {
+        return $http.post(SERVER_URL + '/relevant', { 'userId': userId, 'book': book.title });
+    };
+
 }]);

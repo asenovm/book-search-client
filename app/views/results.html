@@ -1,6 +1,11 @@
 <div carousel class="carousel" ng-hide="!books || books.length == 0">
   <div slide ng-repeat="book in books">
-    <img ng-src="{{book.image}}" style="margin: auto;">
+    <div class="imageContainer" container-size="">
+        <img ng-src="{{book.image}}">
+        <div class="coverContainer">
+            <div class="btn btn-primary" ng-click="markAsRelevant(book, $event)">Добър резултат</div>
+        </div>
+    </div>
     <div id="resultsContainer">
         <p><span class="label label-warning">Заглавие:</span> <em>{{book.title}}</em> </p>
         <p><span class="label label-warning">Свързаност:</span> <em>{{book.relevance}}</em></p>
