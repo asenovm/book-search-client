@@ -14,4 +14,16 @@ angular.module('bookSearchClientApp').service('SearchService', ['$http', functio
         return $http.post(SERVER_URL + '/relevant', { 'userId': userId, 'book': book.title, 'query': searchQuery });
     };
 
+    this.isMarkedAsRelevant = function (book, userId) {
+        return $http.({
+            url: SERVER_URL + '/relevant',
+            method: 'GET',
+            params: {
+                userId: userId,
+                book: book.title,
+                query: searchQuery
+            }
+        });
+    };
+
 }]);
