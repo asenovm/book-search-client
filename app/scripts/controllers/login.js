@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bookSearchClientApp')
-    .controller('LoginController', ['$scope', '$location', '$route', 'SessionService', function ($scope, $location, $route, sessionService) {
+    .controller('LoginController', ['$rootScope', '$scope', '$location', '$route', 'SessionService', function ($rootScope, $scope, $location, $route, sessionService) {
         FB.init({
             appId      : '352011688261066',
             status     : true,
@@ -24,6 +24,18 @@ angular.module('bookSearchClientApp')
                 } else {
                     FB.login();
                 }
+            });
+        };
+
+        $rootScope.isLoggedIn = function () {
+            return sessionService.getLoginInfo();
+        };
+
+        $rootScope.logout = function () {
+            FB.logout(function (response) {
+                sessionService.storeLoginInfo(null);
+                $scope.$apply();
+                console.log('logged out');
             });
         };
 
