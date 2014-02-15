@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('bookSearchClientApp')
-    .controller('LoginController', ['$scope', '$location', 'SessionService', function ($scope, $location, sessionService) {
+    .controller('LoginController', ['$scope', '$location', '$route', 'SessionService', function ($scope, $location, $route, sessionService) {
         FB.init({
             appId      : '352011688261066',
             status     : true,
@@ -30,5 +30,6 @@ angular.module('bookSearchClientApp')
         function onLoginSuccessfull (response) {
             sessionService.storeLoginInfo(response.authResponse.userID);
             $location.path('/search');
+            $route.reload();
         }
     }]);
