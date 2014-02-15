@@ -10,4 +10,8 @@ angular.module('bookSearchClientApp')
                 $($event.target).text('Грешка при добавянето');
             });
         };
+
+        $scope.canMarkAsRelevant = function () {
+            return sessionService.getLoginInfo();
+        };
     }]);

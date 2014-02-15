@@ -3,7 +3,7 @@
     <div class="imageContainer" container-size="">
         <img ng-src="{{book.image}}">
         <div class="coverContainer">
-            <div class="btn btn-primary" ng-click="markAsRelevant(book, $event)">Добър резултат</div>
+            <div class="btn btn-primary" ng-click="markAsRelevant(book, $event)" ng-show="canMarkAsRelevant()">Добър резултат</div>
         </div>
     </div>
     <div id="resultsContainer">
