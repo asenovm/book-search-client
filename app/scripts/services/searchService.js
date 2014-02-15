@@ -15,7 +15,7 @@ angular.module('bookSearchClientApp').service('SearchService', ['$http', functio
     };
 
     this.isMarkedAsRelevant = function (book, userId) {
-        return $http.({
+        return $http({
             url: SERVER_URL + '/relevant',
             method: 'GET',
             params: {
